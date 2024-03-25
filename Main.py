@@ -1,5 +1,4 @@
 import json
-
 import scipy.stats as stats
 import numpy as np
 import statsmodels.stats.multicomp as multi
@@ -9,14 +8,19 @@ import seaborn as sns
 
 
 def main():
+    path = 'Mac_M1_Test/'
+    low_demand = path + 'LowDemandTestResult.json'
+    medium_demand = path + 'MediumDemandTestResult.json'
+    high_demand = path + 'HighDemandTestResult.json'
+
     # Read the JSON file
-    with open('LowDemandTestResult_Windows11.json') as f:
+    with open(low_demand) as f:
         ld_data = json.load(f)
         ld_runs = ld_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['runs']
-    with open('MediumDemandTestResult_Windows11.json') as f:
+    with open(medium_demand) as f:
         md_data = json.load(f)
         md_runs = md_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['runs']
-    with open('HighDemandTestResult_Windows11.json') as f:
+    with open(high_demand) as f:
         hd_data = json.load(f)
         hd_runs = hd_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['runs']
 
