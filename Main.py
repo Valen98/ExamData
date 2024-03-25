@@ -8,10 +8,10 @@ import seaborn as sns
 
 
 def main():
-    path = 'Mac_M1_Test/'
-    low_demand = path + 'LowDemandTestResult.json'
-    medium_demand = path + 'MediumDemandTestResult.json'
-    high_demand = path + 'HighDemandTestResult.json'
+    path = 'Mac_M1_Test'
+    low_demand = path + '/LowDemandTestResult.json'
+    medium_demand = path + '/MediumDemandTestResult.json'
+    high_demand = path + '/HighDemandTestResult.json'
 
     # Read the JSON file
     with open(low_demand) as f:
@@ -30,7 +30,7 @@ def main():
     # Plot the boxplot
     plt.figure(figsize=(8, 6))
     sns.boxplot(data=df, width=0.5)
-    plt.title('Boxplot of Jetpack Compose Startup Time')
+    plt.title('Boxplot of Jetpack Compose Startup Time ' + path)
     plt.ylabel('Time (ms)')
     plt.grid(True)
     plt.show()
