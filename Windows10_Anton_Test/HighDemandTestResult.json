@@ -1,0 +1,48 @@
+{
+    "context": {
+        "build": {
+            "brand": "google",
+            "device": "generic_x86",
+            "fingerprint": "google/sdk_gphone_x86/generic_x86:8.0.0/OSR1.170901.043/4456315:user/release-keys",
+            "model": "Android SDK built for x86",
+            "version": {
+                "sdk": 26
+            }
+        },
+        "cpuCoreCount": 4,
+        "cpuLocked": false,
+        "cpuMaxFreqHz": -1,
+        "memTotalBytes": 2118537216,
+        "sustainedPerformanceModeEnabled": false
+    },
+    "benchmarks": [
+        {
+            "name": "startup",
+            "params": {},
+            "className": "com.example.benchmark.ExampleStartupBenchmark",
+            "totalRunTimeNs": 94472182300,
+            "metrics": {
+                "timeToInitialDisplayMs": {
+                    "minimum": 2133.1927,
+                    "maximum": 3062.454899,
+                    "median": 2705.1786,
+                    "runs": [
+                        3062.454899,
+                        2501.989101,
+                        2133.1927,
+                        2599.8094,
+                        2404.6993,
+                        3023.676801,
+                        3016.7507,
+                        2705.1786,
+                        2744.565699
+                    ]
+                }
+            },
+            "sampledMetrics": {},
+            "warmupIterations": 0,
+            "repeatIterations": 10,
+            "thermalThrottleSleepSeconds": 0
+        }
+    ]
+}

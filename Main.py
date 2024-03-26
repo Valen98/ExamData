@@ -8,7 +8,7 @@ import seaborn as sns
 
 
 def main():
-    path = 'Mac_M1_Test'
+    path = 'Windows11_Leo_Test'
     low_demand = path + '/LowDemandTestResult.json'
     medium_demand = path + '/MediumDemandTestResult.json'
     high_demand = path + '/HighDemandTestResult.json'
@@ -32,6 +32,7 @@ def main():
     sns.boxplot(data=df, width=0.5)
     plt.title('Boxplot of Jetpack Compose Startup Time ' + path)
     plt.ylabel('Time (ms)')
+    plt.ylim(0, 5500)
     plt.grid(True)
     plt.show()
 
