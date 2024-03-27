@@ -19,24 +19,24 @@
         {
             "name": "startup",
             "params": {},
-            "className": "com.example.benchmark.ExampleStartupBenchmark",
-            "totalRunTimeNs": 143468720360,
+            "className": "com.example.benchmark2.ExampleStartupBenchmark",
+            "totalRunTimeNs": 51452405816,
             "metrics": {
                 "timeToInitialDisplayMs": {
-                    "minimum": 6258.567922,
-                    "maximum": 13777.47864,
-                    "median": 7005.433987,
+                    "minimum": 845.882376,
+                    "maximum": 1597.713751,
+                    "median": 945.1499175,
                     "runs": [
-                        13777.47864,
-                        6555.49713,
-                        7380.765548,
-                        7066.826925,
-                        6944.041049,
-                        6319.587297,
-                        6674.2088,
-                        9062.954259,
-                        9469.155885,
-                        6258.567922
+                        1597.713751,
+                        1035.312418,
+                        936.442208,
+                        955.410918,
+                        915.228918,
+                        953.857627,
+                        884.500626,
+                        845.882376,
+                        964.570043,
+                        880.616043
                     ]
                 }
             },

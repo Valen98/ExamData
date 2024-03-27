@@ -8,7 +8,7 @@ import seaborn as sns
 
 
 def main():
-    path = 'Windows11_Leo_Test'
+    path = 'Mac_Intel_XML_Test'
     low_demand = path + '/LowDemandTestResult.json'
     medium_demand = path + '/MediumDemandTestResult.json'
     high_demand = path + '/HighDemandTestResult.json'
@@ -30,9 +30,20 @@ def main():
     # Plot the boxplot
     plt.figure(figsize=(8, 6))
     sns.boxplot(data=df, width=0.5)
-    plt.title('Boxplot of Jetpack Compose Startup Time ' + path)
+    # Title for the boxplot depending on the UI
+    if "XML" in path:
+        plt.title('Boxplot of XML Startup time ' + path)
+    else:
+        plt.title('Boxplot of Jetpack Compose Startup Time ' + path)
+
     plt.ylabel('Time (ms)')
-    plt.ylim(0, 5500)
+
+    # Set the y-lim to be the high demand worst time + 1000.
+    # Due to High demand always on our test have worse startup time.
+    plt.ylim(
+        0,
+        hd_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['maximum'] + 1000
+    )
     plt.grid(True)
     plt.show()
 
