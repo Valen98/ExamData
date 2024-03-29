@@ -1,0 +1,49 @@
+{
+    "context": {
+        "build": {
+            "brand": "OnePlus",
+            "device": "Nord",
+            "fingerprint": "OnePlus/Nord_EEA/Nord:11/RP1A.201005.001/2201171929:user/release-keys",
+            "model": "AC2003",
+            "version": {
+                "sdk": 30
+            }
+        },
+        "cpuCoreCount": 8,
+        "cpuLocked": false,
+        "cpuMaxFreqHz": 2400000000,
+        "memTotalBytes": 7803576320,
+        "sustainedPerformanceModeEnabled": false
+    },
+    "benchmarks": [
+        {
+            "name": "startup",
+            "params": {},
+            "className": "com.example.benchmark.ExampleStartupBenchmark",
+            "totalRunTimeNs": 51880952167,
+            "metrics": {
+                "timeToInitialDisplayMs": {
+                    "minimum": 1328.369739,
+                    "maximum": 1373.072031,
+                    "median": 1344.5706245000001,
+                    "runs": [
+                        1362.902552,
+                        1356.872135,
+                        1345.061301,
+                        1344.079948,
+                        1328.369739,
+                        1334.864218,
+                        1373.072031,
+                        1337.168957,
+                        1355.488176,
+                        1333.220155
+                    ]
+                }
+            },
+            "sampledMetrics": {},
+            "warmupIterations": 0,
+            "repeatIterations": 10,
+            "thermalThrottleSleepSeconds": 0
+        }
+    ]
+}

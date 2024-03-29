@@ -8,7 +8,7 @@ import seaborn as sns
 
 
 def main():
-    path = 'Mac_Intel_XML_Test'
+    path = 'OnePlus_XML_Test'
     low_demand = path + '/LowDemandTestResult.json'
     medium_demand = path + '/MediumDemandTestResult.json'
     high_demand = path + '/HighDemandTestResult.json'
@@ -23,6 +23,7 @@ def main():
     with open(high_demand) as f:
         hd_data = json.load(f)
         hd_runs = hd_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['runs']
+        hd_max = hd_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['maximum']
 
     # Create a DataFrame from the runs data
     df = pd.DataFrame({'LowDemand': ld_runs, 'MediumDemand': md_runs, 'HighDemand': hd_runs})
@@ -41,8 +42,8 @@ def main():
     # Set the y-lim to be the high demand worst time + 1000.
     # Due to High demand always on our test have worse startup time.
     plt.ylim(
-        0,
-        hd_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['maximum'] + 1000
+        1200,
+        hd_max + 200
     )
     plt.grid(True)
     plt.show()
