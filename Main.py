@@ -8,7 +8,7 @@ import seaborn as sns
 
 
 def main():
-    path = 'OnePlus_XML_Test'
+    path = 'OnePlus_Test'
     low_demand = path + '/LowDemandTestResult.json'
     medium_demand = path + '/MediumDemandTestResult.json'
     high_demand = path + '/HighDemandTestResult.json'
