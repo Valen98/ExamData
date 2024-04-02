@@ -1,0 +1,69 @@
+{
+    "context": {
+        "build": {
+            "brand": "OnePlus",
+            "device": "Nord",
+            "fingerprint": "OnePlus/Nord_EEA/Nord:11/RP1A.201005.001/2201171929:user/release-keys",
+            "model": "AC2003",
+            "version": {
+                "sdk": 30
+            }
+        },
+        "cpuCoreCount": 8,
+        "cpuLocked": false,
+        "cpuMaxFreqHz": 2400000000,
+        "memTotalBytes": 7803576320,
+        "sustainedPerformanceModeEnabled": false
+    },
+    "benchmarks": [
+        {
+            "name": "startup",
+            "params": {},
+            "className": "com.example.benchmark.ExampleStartupBenchmark",
+            "totalRunTimeNs": 141051747082,
+            "metrics": {
+                "timeToInitialDisplayMs": {
+                    "minimum": 1332.907135,
+                    "maximum": 1381.235676,
+                    "median": 1351.944817,
+                    "runs": [
+                        1352.009739,
+                        1381.235676,
+                        1357.711614,
+                        1346.198333,
+                        1343.19401,
+                        1363.395416,
+                        1343.687187,
+                        1359.444739,
+                        1356.106874,
+                        1352.635676,
+                        1362.719843,
+                        1349.435364,
+                        1365.939427,
+                        1341.308542,
+                        1355.059426,
+                        1348.579739,
+                        1337.647812,
+                        1350.578853,
+                        1365.677656,
+                        1357.61375,
+                        1358.891145,
+                        1351.879895,
+                        1356.44802,
+                        1332.907135,
+                        1343.885156,
+                        1346.308645,
+                        1346.876927,
+                        1349.308073,
+                        1340.181614,
+                        1367.854948
+                    ]
+                }
+            },
+            "sampledMetrics": {},
+            "warmupIterations": 0,
+            "repeatIterations": 30,
+            "thermalThrottleSleepSeconds": 0
+        }
+    ]
+}
