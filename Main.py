@@ -7,9 +7,9 @@ import seaborn as sns
 
 def main():
     path = '30_OP_XML_Test'
-    low_demand = path + '/LowDemandTestResult.json'
-    medium_demand = path + '/MediumDemandTestResult.json'
-    high_demand = path + '/HighDemandTestResult.json'
+    low_demand = "Test_Files/" + path + '/LowDemandTestResult.json'
+    medium_demand = "Test_Files/" + path + '/MediumDemandTestResult.json'
+    high_demand = "Test_Files/" + path + '/HighDemandTestResult.json'
 
     # Read the JSON file
     with open(low_demand) as f:
