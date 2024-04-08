@@ -87,7 +87,6 @@ def main():
     plt.xticks([r + barWidth for r in range(len(lowBar))], ["Min", "Median", "Max"])
     plt.legend()
     plt.savefig("Plots/" + filename)
-    plt.savefig(filename)
     plt.show()
 
 
