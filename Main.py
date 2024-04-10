@@ -7,9 +7,9 @@ import seaborn as sns
 
 def main():
     path = '30_OP_XML_Test'
-    low_demand = "Test_Files/" + path + '/LowDemandTestResult.json'
-    medium_demand = "Test_Files/" + path + '/MediumDemandTestResult.json'
-    high_demand = "Test_Files/" + path + '/HighDemandTestResult.json'
+    low_demand = "Startup_Files/" + path + '/LowDemandTestResult.json'
+    medium_demand = "Startup_Files/" + path + '/MediumDemandTestResult.json'
+    high_demand = "Startup_Files/" + path + '/HighDemandTestResult.json'
 
     # Read the JSON file
     with open(low_demand) as f:
@@ -54,7 +54,7 @@ def main():
         1900
     )
     plt.grid(True)
-    plt.savefig("Plots/" + filename)
+    plt.savefig("Plots/Startup_Plots/" + filename)
 
     plt.show()
 
@@ -86,7 +86,7 @@ def main():
     plt.ylabel('Time (ms)')
     plt.xticks([r + barWidth for r in range(len(lowBar))], ["Min", "Median", "Max"])
     plt.legend()
-    plt.savefig("Plots/" + filename)
+    plt.savefig("Plots/Startup_Plots/" + filename)
     plt.show()
 
 
