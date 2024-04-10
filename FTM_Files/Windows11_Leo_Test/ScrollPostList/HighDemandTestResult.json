@@ -1,0 +1,85 @@
+{
+    "context": {
+        "build": {
+            "brand": "google",
+            "device": "generic_x86",
+            "fingerprint": "google/sdk_gphone_x86/generic_x86:8.1.0/OSM1.180201.007/4586646:user/release-keys",
+            "model": "Android SDK built for x86",
+            "version": {
+                "sdk": 27
+            }
+        },
+        "cpuCoreCount": 4,
+        "cpuLocked": false,
+        "cpuMaxFreqHz": -1,
+        "memTotalBytes": 2118426624,
+        "sustainedPerformanceModeEnabled": false
+    },
+    "benchmarks": [
+        {
+            "name": "scrollPostTest",
+            "params": {},
+            "className": "com.example.benchmark.ExampleStartupBenchmark",
+            "totalRunTimeNs": 100587870100,
+            "metrics": {},
+            "sampledMetrics": {
+                "frameDurationCpuMs": {
+                    "P50": 818.3804,
+                    "P90": 1549.2084,
+                    "P95": 1555.04146,
+                    "P99": 1559.50290728,
+                    "runs": [
+                        [
+                            1514.983901,
+                            830.288899,
+                            789.2522,
+                            944.876
+                        ],
+                        [],
+                        [],
+                        [
+                            839.283601,
+                            748.862399,
+                            748.5064,
+                            818.3804,
+                            1529.1553
+                        ],
+                        [],
+                        [
+                            805.890299,
+                            749.6431,
+                            741.006299,
+                            878.051,
+                            1554.388
+                        ],
+                        [
+                            813.089599,
+                            764.5008,
+                            766.0088,
+                            773.061801,
+                            1547.9135
+                        ],
+                        [
+                            822.4116,
+                            756.1362,
+                            754.296501,
+                            889.9802,
+                            1561.068499
+                        ],
+                        [],
+                        [
+                            846.3052,
+                            756.0708,
+                            765.3322,
+                            867.961299,
+                            1555.4771
+                        ]
+                    ]
+                }
+            },
+            "warmupIterations": 0,
+            "repeatIterations": 10,
+            "thermalThrottleSleepSeconds": 0
+        }
+    ]
+}

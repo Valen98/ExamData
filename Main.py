@@ -11,25 +11,23 @@ def main():
     medium_demand = "Startup_Files/" + path + '/MediumDemandTestResult.json'
     high_demand = "Startup_Files/" + path + '/HighDemandTestResult.json'
 
-    # Read the JSON file
+    def read_json_file(file_path):
+        with open(file_path) as f:
+            data = json.load(f)
+            runs = data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['runs']
+            low = data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['minimum']
+            median = data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['median']
+            maximum = data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['maximum']
+        return runs, low, median, maximum
+
     with open(low_demand) as f:
-        ld_data = json.load(f)
-        ld_runs = ld_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['runs']
-        ld_low = ld_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['minimum']
-        ld_median = ld_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['median']
-        ld_max = ld_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['maximum']
+        ld_runs, ld_low, ld_median, ld_max = read_json_file(low_demand)
+
     with open(medium_demand) as f:
-        md_data = json.load(f)
-        md_runs = md_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['runs']
-        md_low = md_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['minimum']
-        md_median = md_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['median']
-        md_max = md_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['maximum']
+        md_runs, md_low, md_median, md_max = read_json_file(medium_demand)
+
     with open(high_demand) as f:
-        hd_data = json.load(f)
-        hd_runs = hd_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['runs']
-        hd_low = hd_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['minimum']
-        hd_median = hd_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['median']
-        hd_max = hd_data['benchmarks'][0]['metrics']['timeToInitialDisplayMs']['maximum']
+        hd_runs, hd_low, hd_median, hd_max = read_json_file(high_demand)
 
     # Create a DataFrame from the runs data
     df = pd.DataFrame({'LowDemand': ld_runs, 'MediumDemand': md_runs, 'HighDemand': hd_runs})
