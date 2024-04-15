@@ -6,7 +6,7 @@ import seaborn as sns
 
 
 def main():
-    path = 'Windows11_Leo_test'
+    path = 'OP_Test'
     test_type = "/ScrollPostList"
     medium_demand = "FTM_Files/" + path + test_type + '/MediumDemandTestResult.json'
     high_demand = "FTM_Files/" + path + test_type + '/HighDemandTestResult.json'
@@ -23,7 +23,7 @@ def main():
         return bar_data
 
     md_bar = read_json_file(medium_demand)
-    hd_bar = read_json_file(high_demand)
+    # hd_bar = read_json_file(high_demand)
     categories = ['p50', 'p90', 'p95', 'p99']
     x = np.arange(len(categories))
     width = 0.35
@@ -34,15 +34,15 @@ def main():
     md_bars = ax.bar(x - width / 2, md_bar, width, label='Medium Demand')
 
     # Plotting bars for high demand
-    hd_bars = ax.bar(x + width / 2, hd_bar, width, label='High Demand')
+    # hd_bars = ax.bar(x + width / 2, hd_bar, width, label='High Demand')
 
     if "XML" in path:
         ax.set_title("Frame Timing metric of XML, " + path)
-        filename = path + "_FTM_XML.png"
+        filename = path + "_FTM_XML.svg"
 
     else:
         ax.set_title("Frame Timing metric of Jetpack Compose, " + path)
-        filename = path + "_FTM_.png"
+        filename = path + "_FTM_.svg"
 
     ax.set_ylabel('Frame Duration (CPU ms)')
     ax.set_xticks(x)
@@ -60,13 +60,10 @@ def main():
                         ha='center', va='bottom')
 
     autolabel(md_bars)
-    autolabel(hd_bars)
-    plt.ylim(
-        0,
-        2000
-    )
+    # autolabel(hd_bars)
+    # plt.ylim(0, 200)
 
-    plt.savefig("Plots/FTM/" + test_type + "/" + filename)
+    plt.savefig("Plots/FTM/" + test_type + "/" + filename, format='svg')
 
     plt.show()
 

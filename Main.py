@@ -6,7 +6,7 @@ import seaborn as sns
 
 
 def main():
-    path = '30_OP_XML_Test'
+    path = '30_OP_Test'
     low_demand = "Startup_Files/" + path + '/LowDemandTestResult.json'
     medium_demand = "Startup_Files/" + path + '/MediumDemandTestResult.json'
     high_demand = "Startup_Files/" + path + '/HighDemandTestResult.json'
@@ -38,10 +38,10 @@ def main():
     # Title for the boxplot depending on the UI
     if "XML" in path:
         plt.title('Boxplot of XML Startup time ' + path)
-        filename = path + "_Boxplot_XML.png"
+        filename = path + "_Boxplot_XML.svg"
     else:
         plt.title('Boxplot of Jetpack Compose Startup Time ' + path)
-        filename = path + "_Boxplot_Jetpack.png"
+        filename = path + "_Boxplot_Jetpack.svg"
     plt.ylabel('Time (ms)')
 
     # Set the y-lim to be the high demand worst time + 1000.
@@ -52,7 +52,7 @@ def main():
         1900
     )
     plt.grid(True)
-    plt.savefig("Plots/Startup_Plots/" + filename)
+    plt.savefig("Plots/Startup_Plots/" + filename, format='svg')
 
     plt.show()
 
@@ -75,16 +75,16 @@ def main():
     # Title for the boxplot depending on the UI
     if "XML" in path:
         plt.xlabel("The startup time of XML " + path)
-        filename = path + "_barChart_XML.png"
+        filename = path + "_barChart_XML.svg"
 
     else:
         plt.xlabel("The startup time of Jetpack Compose " + path)
-        filename = path + "_barChart_Jetpack.png"
+        filename = path + "_barChart_Jetpack.svg"
 
     plt.ylabel('Time (ms)')
     plt.xticks([r + barWidth for r in range(len(lowBar))], ["Min", "Median", "Max"])
     plt.legend()
-    plt.savefig("Plots/Startup_Plots/" + filename)
+    plt.savefig("Plots/Startup_Plots/" + filename, format='svg')
     plt.show()
 
 
