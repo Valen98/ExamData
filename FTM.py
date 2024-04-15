@@ -7,7 +7,7 @@ import seaborn as sns
 
 def main():
     path = 'OP_Test'
-    test_type = "/ScrollPostList"
+    test_type = "/ScrollRow"
     medium_demand = "FTM_Files/" + path + test_type + '/MediumDemandTestResult.json'
     high_demand = "FTM_Files/" + path + test_type + '/HighDemandTestResult.json'
 
@@ -15,15 +15,15 @@ def main():
         with open(file_path) as f:
             data = json.load(f)
             bar_data = [
-                round(data['benchmarks'][0]['sampledMetrics']['frameDurationCpuMs']['P50'], 2),
-                round(data['benchmarks'][0]['sampledMetrics']['frameDurationCpuMs']['P90'], 2),
-                round(data['benchmarks'][0]['sampledMetrics']['frameDurationCpuMs']['P95'], 2),
-                round(data['benchmarks'][0]['sampledMetrics']['frameDurationCpuMs']['P99'], 2)
+                round(data['benchmarks'][0]['sampledMetrics']['frameDurationCpuMs']['P50']),
+                round(data['benchmarks'][0]['sampledMetrics']['frameDurationCpuMs']['P90']),
+                round(data['benchmarks'][0]['sampledMetrics']['frameDurationCpuMs']['P95']),
+                round(data['benchmarks'][0]['sampledMetrics']['frameDurationCpuMs']['P99'])
             ]
         return bar_data
 
     md_bar = read_json_file(medium_demand)
-    # hd_bar = read_json_file(high_demand)
+    hd_bar = read_json_file(high_demand)
     categories = ['p50', 'p90', 'p95', 'p99']
     x = np.arange(len(categories))
     width = 0.35
@@ -34,7 +34,7 @@ def main():
     md_bars = ax.bar(x - width / 2, md_bar, width, label='Medium Demand')
 
     # Plotting bars for high demand
-    # hd_bars = ax.bar(x + width / 2, hd_bar, width, label='High Demand')
+    hd_bars = ax.bar(x + width / 2, hd_bar, width, label='High Demand')
 
     if "XML" in path:
         ax.set_title("Frame Timing metric of XML, " + path)
@@ -60,8 +60,8 @@ def main():
                         ha='center', va='bottom')
 
     autolabel(md_bars)
-    # autolabel(hd_bars)
-    # plt.ylim(0, 200)
+    autolabel(hd_bars)
+    plt.ylim(0, 1700)
 
     plt.savefig("Plots/FTM/" + test_type + "/" + filename, format='svg')
 
