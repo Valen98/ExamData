@@ -6,8 +6,8 @@ import seaborn as sns
 
 
 def main():
-    path = 'OP_Test'
-    test_type = "/ScrollRow"
+    path = 'OP_XML_Test'
+    test_type = "/AllTest"
     medium_demand = "FTM_Files/" + path + test_type + '/MediumDemandTestResult.json'
     high_demand = "FTM_Files/" + path + test_type + '/HighDemandTestResult.json'
 

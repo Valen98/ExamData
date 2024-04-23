@@ -6,7 +6,7 @@ import seaborn as sns
 
 
 def main():
-    path = '30_OP_Test'
+    path = '30_OP_XML_Test'
     low_demand = "Startup_Files/" + path + '/LowDemandTestResult.json'
     medium_demand = "Startup_Files/" + path + '/MediumDemandTestResult.json'
     high_demand = "Startup_Files/" + path + '/HighDemandTestResult.json'
@@ -38,10 +38,10 @@ def main():
     # Title for the boxplot depending on the UI
     if "XML" in path:
         plt.title('Boxplot of XML Startup time ' + path)
-        filename = path + "_Boxplot_XML.svg"
+        filename = path + "_Boxplot_XML_outlier.svg"
     else:
         plt.title('Boxplot of Jetpack Compose Startup Time ' + path)
-        filename = path + "_Boxplot_Jetpack.svg"
+        filename = path + "_Boxplot_Jetpack_outlier.svg"
     plt.ylabel('Time (ms)')
 
     # Set the y-lim to be the high demand worst time + 1000.
@@ -49,7 +49,7 @@ def main():
 
     plt.ylim(
         1250,
-        1900
+        1500
     )
     plt.grid(True)
     plt.savefig("Plots/Startup_Plots/" + filename, format='svg')
@@ -68,23 +68,27 @@ def main():
     br2 = [x + barWidth for x in br1]
     br3 = [x + barWidth for x in br2]
 
-    plt.bar(br1, lowBar, color='r', width=barWidth, edgecolor='grey', label='Low Demand')
-    plt.bar(br2, mediumBar, color='g', width=barWidth, edgecolor='grey', label='Medium Demand')
-    plt.bar(br3, highBar, color='b', width=barWidth, edgecolor='grey', label='High Demand')
+    plt.bar(br1, lowBar, color='#1b9e77', width=barWidth, edgecolor='grey', label='Low Demand')
+    plt.bar(br2, mediumBar, color='#A890F0', width=barWidth, edgecolor='grey', label='Medium Demand')
+    plt.bar(br3, highBar, color='#fdaa48', width=barWidth, edgecolor='grey', label='High Demand')
 
     # Title for the boxplot depending on the UI
     if "XML" in path:
         plt.xlabel("The startup time of XML " + path)
-        filename = path + "_barChart_XML.svg"
+        filename = path + "_barChart_XML.png"
 
     else:
         plt.xlabel("The startup time of Jetpack Compose " + path)
-        filename = path + "_barChart_Jetpack.svg"
+        filename = path + "_barChart_Jetpack.png"
 
     plt.ylabel('Time (ms)')
     plt.xticks([r + barWidth for r in range(len(lowBar))], ["Min", "Median", "Max"])
     plt.legend()
-    plt.savefig("Plots/Startup_Plots/" + filename, format='svg')
+    plt.ylim(
+        0,
+        1850
+    )
+    plt.savefig("Plots/Startup_Plots/" + filename, format='png')
     plt.show()
 
 
