@@ -6,7 +6,7 @@ import seaborn as sns
 
 
 def main():
-    path = 'OP_XML_Test'
+    path = 'OP_Test'
     test_type = "/AllTest"
     medium_demand = "FTM_Files/" + path + test_type + '/MediumDemandTestResult.json'
     high_demand = "FTM_Files/" + path + test_type + '/HighDemandTestResult.json'
@@ -38,11 +38,11 @@ def main():
 
     if "XML" in path:
         ax.set_title("Frame Timing metric of XML, " + path)
-        filename = path + "_FTM_XML.svg"
+        filename = path + "_FTM_XML.png"
 
     else:
         ax.set_title("Frame Timing metric of Jetpack Compose, " + path)
-        filename = path + "_FTM_.svg"
+        filename = path + "_FTM_.png"
 
     ax.set_ylabel('Frame Duration (CPU ms)')
     ax.set_xticks(x)
@@ -63,7 +63,7 @@ def main():
     autolabel(hd_bars)
     plt.ylim(0, 1700)
 
-    plt.savefig("Plots/FTM/" + test_type + "/" + filename, format='svg')
+    plt.savefig("Plots/FTM/" + test_type + "/" + filename, format='png')
 
     plt.show()
 
