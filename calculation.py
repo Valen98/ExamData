@@ -67,9 +67,9 @@ def main():
         sns.boxplot(data=df, width=0.5)
         plt.title(title)
         plt.grid(True)
+        filename = title.replace(" ", "_") + ".svg"
+        plt.savefig("Plots/Calculation/" + filename, format='svg')
         plt.show()
-
-        plt.savefig("Plots/Calculation/" + title, format='svg')
 
 
 main()
