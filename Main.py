@@ -29,7 +29,6 @@ def main():
     with open(high_demand) as f:
         hd_runs, hd_low, hd_median, hd_max = read_json_file(high_demand)
 
-    print(ld_runs)
     # Create a DataFrame from the runs data
     df = pd.DataFrame({'LowDemand': ld_runs, 'MediumDemand': md_runs, 'HighDemand': hd_runs})
 
