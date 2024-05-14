@@ -68,6 +68,7 @@ def main():
         plt.title(title)
         plt.grid(True)
         plt.show()
+
         plt.savefig("Plots/Calculation/" + title, format='svg')
 
 
