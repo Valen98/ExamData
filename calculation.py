@@ -57,7 +57,6 @@ def main():
         "Current excluding semi-arbitrary outliers": battery_bar_list_no_outliers
     }
 
-    print(all_plots)
     for title, plot in all_plots.items():
         for key, value in plot.items():
             while len(value) < 30:
@@ -65,10 +64,16 @@ def main():
         df = pd.DataFrame(plot)
         plt.figure(figsize=(15, 6))
         sns.boxplot(data=df, width=0.5)
+        if "CPU" in title:
+            plt.ylabel("Peak CPU %", fontsize=16)
+        if "Current" in title:
+            plt.ylabel("Current usage of battery μA (Microampere)", fontsize=16)
+        if "Memory" in title:
+            plt.ylabel("Total memory usage (MB)",  fontsize=16)
         plt.title(title)
         plt.grid(True)
-        filename = title.replace(" ", "_") + ".svg"
-        plt.savefig("Plots/Calculation/" + filename, format='svg')
+        filename = title.replace(" ", "_") + ".png"
+        plt.savefig("Plots/Calculation/" + filename, format='png')
         plt.show()
 
 
